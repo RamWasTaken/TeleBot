@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+/* styles.css */
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  padding: 1rem;
+  background-color: #eee;
+}
+
+.header {
+  flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.footer {
+  flex-grow: 0; /* Prevent footer from growing */
+}
+
+.content {
+  flex: 0; /* Allow content to fill remaining space */
+}
