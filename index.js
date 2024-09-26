@@ -10,18 +10,18 @@ app.use(
 	})
 ) // for parsing application/x-www-form-urlencoded
 
-axios.post(`https://api.telegram.org/bot7555110905:AAFMMPJpNc3px9qEuLurmgFuZJ53r2tTTBQ/setWebhook`, {
-    url: 'https://my-telegram-bot-puce.vercel.app/new-message'
-})
-.then(response => {
-    console.log("Webhook set successfully:", response.data);
-})
-.catch(error => {
-    console.error("Error setting webhook:", error);
-});
+// axios.post(`https://api.telegram.org/bot TELEGRAM_BOT_TOKEN /setWebhook`, {
+//     url: 'https://my-telegram-bot-puce.vercel.app/new-message'
+// })
+// .then(response => {
+//     console.log("Webhook set successfully:", response.data);
+// })
+// .catch(error => {
+//     console.error("Error setting webhook:", error);
+// });
 
 //This is the route the API will call
-app.post("/", function(req, res) {
+app.post("/new-message", function(req, res) {
 	const { message } = req.body
 
 	//Each message contains "text" and a "chat" object, which has an "id" which is the chat id
@@ -58,3 +58,5 @@ app.post("/", function(req, res) {
 app.listen(3000, function() {
 	console.log("Telegram app listening on port 3000!")
 })
+
+module.exports = app;
